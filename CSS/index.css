@@ -1,0 +1,52 @@
+html,
+body {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+.nav {
+    border-top: 1px solid #e1e8ee;
+    border-bottom: 1px solid #e1e8ee;
+}
+
+
+.search-card .card {
+    background-color: #F5F8FA !important;
+    border-bottom: 1px solid #e1e8ee;
+    border-top: 1px solid #e1e8ee;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.search-card .card h1 {
+    color: #86939e;
+    font-weight: 900;
+}
+
+.search-card .card p {
+    color: #86939e;
+    font-weight: 100;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    padding-top: 30px;
+    text-align: center;
+    width: 70%;
+    background: url(../img/icon-circles.png) no-repeat scroll center bottom;
+    margin-bottom: 100px;
+}
+
+.search-card .card .search-field {
+    /* width: 70%; */
+    font-size: 18px;
+    border-radius: 30px;
+    border: 2px solid #e1e8ee;
+    padding: 0px 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 60px;
+    -webkit-appearance: none;
+
+
+
+}
