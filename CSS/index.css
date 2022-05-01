@@ -10,6 +10,7 @@ body {
     font-weight: 300;
     letter-spacing: 0.2px;
     padding-right: 0 !important;
+    font-family: 'Roboto', sans-serif;
 }
 
 .nav {
@@ -24,6 +25,7 @@ body {
     border-top: 1px solid #e1e8ee;
     padding-top: 100px;
     padding-bottom: 100px;
+    background: url(../img/icon-circles.png) no-repeat scroll center bottom;
 }
 
 .search-card .card h1 {
@@ -39,18 +41,21 @@ body {
 }
 
 .search-card .card p {
-    color: #86939e;
+    color: #6c757d !important;
     font-weight: 100;
     margin: 0 auto;
     padding-bottom: 15px;
     padding-top: 30px;
     text-align: center;
     width: 70%;
-    background: url(../img/icon-circles.png) no-repeat scroll center bottom;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 
-
+@media (min-width: 1031px) {
+    .search-card .card p {
+        font-size: 22px;
+    }
+}
 
 .search-card .card .search-field {
     /* width: 70%; */
