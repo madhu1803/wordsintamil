@@ -69,5 +69,27 @@ body {
     -webkit-appearance: none;
 
 
+}
+
+.btn-light {
+
+    border: 2px solid #e1e8ee;
+    background: #f5f8fa;
+}
+
+nav .btn-light {
+    padding: 8px 20px !important;
+    display: block;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 300;
+}
+
+.search-card .btn-light {
+    border-radius: 30px;
+    padding: 0px 30px;
+    height: 40px;
+    -webkit-appearance: none;
+    color: #6c757d;
 
 }
