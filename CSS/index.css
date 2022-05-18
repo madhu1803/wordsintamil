@@ -18,6 +18,20 @@ body {
     border-bottom: 1px solid #e1e8ee;
 }
 
+.btn-light {
+
+    border: 2px solid #e1e8ee;
+    background: #f5f8fa;
+}
+
+nav .btn-light {
+    padding: 8px 20px !important;
+    display: block;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 300;
+}
+
 
 .search-card .card {
     background-color: #F5F8FA !important;
@@ -25,6 +39,7 @@ body {
     border-top: 1px solid #e1e8ee;
     padding-top: 100px;
     padding-bottom: 100px;
+    margin-bottom: 100px !important;
     background: url(../img/icon-circles.png) no-repeat scroll center bottom;
 }
 
@@ -71,25 +86,18 @@ body {
 
 }
 
-.btn-light {
 
-    border: 2px solid #e1e8ee;
-    background: #f5f8fa;
-}
 
-nav .btn-light {
-    padding: 8px 20px !important;
+.search-card .card::after {
+    background: transparent url(../img/telescope.png) no-repeat scroll center bottom;
+    bottom: -65px;
+    content: "";
     display: block;
-    font-size: 13px;
-    line-height: 20px;
-    font-weight: 300;
-}
-
-.search-card .btn-light {
-    border-radius: 30px;
-    padding: 0px 30px;
-    height: 40px;
-    -webkit-appearance: none;
-    color: #6c757d;
-
+    height: 128px;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    right: 0;
+    width: 128px;
 }
