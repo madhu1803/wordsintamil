@@ -22,6 +22,9 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
     <title>Words in Tamil</title>
+    
+    <!-- Typeahead CSS -->
+    <link rel="stylesheet" href="CSS/jquery.typeahead.min.css">
 </head>
 
 <body>
@@ -45,13 +48,22 @@
                 <div class="row">
                     <div class="col-lg-8 mx-md-auto">
                         <div class="card-body">
-                            <h1 ">Words in Tamil</h1>
+                            <h1>Words in Tamil</h1>
                             <p class=" card-text lead text-muted">Sed eget orci eleifend enim mattis suscipit.
                                 Suspendisse potenti non ipsum..</p>
                                 <form>
                                     <div class="mb-3">
-                                        <input type="text" class="form-control search-field" id="exampleInputEmail1"
-                                            placeholder="search something">
+                                        <div class="typeahead__container">
+                                            <div class="typeahead__field">
+                                                <div class="typeahead__query">
+                                                    <input type="text" class="form-control search-field js-typeahead" id="exampleInputEmail1"
+                                                        placeholder="search something" id="editor" name="editor" dir="ltr"
+                                                        name="q"
+                                                        autofocus
+                                                        autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </form>
                         </div>
@@ -239,8 +251,9 @@
         src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.print.min.js"></script>
     <script>
         // datatable initialisation
-        $(document).ready(function () {
-            $('#example').DataTable({
+        var $j = jQuery.noConflict();
+        $j(document).ready(function () {
+            $j('#example').DataTable({
 
                 dom: 'Bfrtip',
                 buttons: [
@@ -249,6 +262,64 @@
             });
         });
     </script>
+    <!-- Typeahead for autocomplete -->
+    <script src="js/jquery.typeahead.min.js"></script>
+
+        <!-- Temp Script check for autocomplete -->
+        <script>
+            var result = false;
+            var $j = jQuery.noConflict();
+            console.log("jQuery version: " + $j.fn.jquery);
+    
+            $j("document").ready(function() {
+                $j.ajax({
+                    url: "getdata.php",
+                    type: 'POST',
+                    async: true,
+                    data: {},
+                    dataType: 'json',
+    
+                    success: function(res) {
+    
+                        //  mydata=JSON.parse(res);
+                        console.log(res);
+    
+                        $j.typeahead({
+                            input: '.js-typeahead',
+                            order: "desc",
+                            source: {
+                                data: res
+                            },
+                            callback: {
+                                onInit: function(node) {
+                                    console.log('Typeahead Initiated on ' + node[0].selector);
+                                },
+                                onClickAfter: function(node, a, item, event) {
+    
+                                    result = true;
+    
+    
+                                },
+                                onClickBefore: function(node, a, item, event) {
+    
+                                    result = false;
+                                }
+    
+                            }
+                        });
+    
+    
+    
+                    }
+                });
+                setInterval(function() {
+                    if (result == false) {
+                        $j(".js-typeahead").trigger("input");
+                    }
+                }, 300);
+    
+            });
+        </script>
 </body>
 
 </html>
