@@ -87,7 +87,6 @@ nav .btn-light {
 }
 
 
-
 .search-card .card::after {
     background: transparent url(../img/telescope.png) no-repeat scroll center bottom;
     bottom: -65px;
@@ -101,3 +100,13 @@ nav .btn-light {
     right: 0;
     width: 128px;
 }
+
+/* #searchbutton {
+    position: absolute !important;
+    right: 25px !important;
+    top: 25px !important;
+    background: none !important;
+    border: none !important;
+    font-size: 30px !important;
+    color: #86939e !important;
+} */
