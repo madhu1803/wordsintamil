@@ -79,10 +79,9 @@ nav .btn-light {
     border: 2px solid #e1e8ee;
     padding: 0px 30px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     height: 60px;
     -webkit-appearance: none;
-
 
 }
 
