@@ -60,18 +60,18 @@
                             <h1>Words in Tamil</h1>
                             <p class=" card-text lead text-muted">Sed eget orci eleifend enim mattis suscipit.
                                 Suspendisse potenti non ipsum..</p>
-                            <form>
+                            <form id="Searchform">
                                 <div class="mb-3">
                                     <div class="typeahead__container">
                                         <div class="typeahead__field">
                                             <div class="typeahead__query">
                                                 <input type="text" class="form-control search-field js-typeahead"
-                                                    id="exampleInputEmail1" placeholder="search something" id="editor"
-                                                    name="editor" dir="ltr" name="q" autofocus autocomplete="off">
+                                                    placeholder="search something" id="editor" name="editor" dir="ltr"
+                                                    name="q" autofocus autocomplete="off">
                                                 <button type="submit" style="position: absolute
                                                     !important; right: 25px !important; top: 22px !important;
                                                     background: none !important; border: none !important; font-size:
-                                                    30px !important; color: #86939e !important;">
+                                                    30px !important; color: #86939e !important;" id="submit">
                                                     <!-- <i class="fa fa-search" aria-hidden="true" id="searchicon"></i> -->
                                                     <i class="fa fa-search" aria-hidden="true"
                                                         style="speak: none;font-style: normal;font-weight: normal;font-variant: normal;text-transform: none;line-height: 1;"></i>
@@ -122,8 +122,9 @@
         </div>
     </div>
     <!-- table -->
-    <div class="container pb-4 table-responsive">
-        <table id="example" class="display nowrap table table-striped table-bordered pt-4" style="width:100%">
+    <div class="container pb-4 table-responsive" id="mtable" style="display: none;">
+        <button id="close">Close</button>
+        <table id="example" class="display nowrap table table-striped table-bordered pt-4" style="width:100%;">
             <thead>
                 <tr>
                     <th>S. No.</th>
@@ -271,6 +272,20 @@
                     'copy', 'csv', 'excel', 'pdf', 'print'
                 ]
             });
+        });
+
+        // search table display logic
+
+        document.getElementById("Searchform").addEventListener("submit", (e) => {
+            e.preventDefault();
+            // alert('hiiiii');
+            document.getElementById("mtable").style.display = "block";
+            document.getElementById("Searchform").reset();
+        });
+
+        document.getElementById("close").addEventListener("click", (e) => {
+            document.getElementById("mtable").style.display = "none";
+            document.getElementById("userinput").style.display = "";
         });
     </script>
 
