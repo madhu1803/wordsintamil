@@ -66,7 +66,7 @@
                                         <div class="typeahead__field">
                                             <div class="typeahead__query">
                                                 <input type="text" class="form-control search-field js-typeahead"
-                                                    placeholder="search something" id="editor" name="editor" dir="ltr"
+                                                    placeholder="search something" id="editor" dir="ltr"
                                                     name="q" autofocus autocomplete="off">
                                                 <button type="submit" style="position: absolute
                                                     !important; right: 25px !important; top: 22px !important;
@@ -266,21 +266,42 @@
         var $j = jQuery.noConflict();
         $j(document).ready(function () {
             $j('#example').DataTable({
-
                 dom: 'Bfrtip',
                 buttons: [
                     'copy', 'csv', 'excel', 'pdf', 'print'
                 ]
             });
         });
-
+        $j("#editor").keypress(function(event) {
+            if (event.which == 13) {
+                event.preventDefault();
+                $j("#Searchform").submit();
+            }
+        });
         // search table display logic
 
         document.getElementById("Searchform").addEventListener("submit", (e) => {
             e.preventDefault();
             // alert('hiiiii');
             document.getElementById("mtable").style.display = "block";
+            var val = $j("#editor").val();
             document.getElementById("Searchform").reset();
+            if (val != '' || val != undefined){
+                $j.ajax({
+                    url: "getdata.php",
+                    type: 'POST',
+                    async: true,
+                    data: {q: val},
+                    dataType: 'json',
+
+                    success: function (res) {
+                        var table = $j("#example").DataTable();
+                        for(var i = 0; i < res.length; i++) {
+                            table.row.add([i+1, res[i]]).draw();
+                        }
+                    }
+                });
+            }
         });
 
         document.getElementById("close").addEventListener("click", (e) => {
@@ -314,7 +335,6 @@
 
                 success: function (res) {
 
-                    //  mydata=JSON.parse(res);
                     console.log(res);
 
                     $j.typeahead({
