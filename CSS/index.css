@@ -108,6 +108,18 @@ nav .btn-light {
 
 }
 
+
+@media (min-width: 1224px) {
+
+    .vertical-line {
+        /* display: inline-block; */
+        display: inline;
+        border-left: 2px solid #e1e8ee;
+        margin: 0 16px;
+        height: 38px;
+    }
+}
+
 /* #searchbutton {
     position: absolute !important;
     right: 25px !important;
