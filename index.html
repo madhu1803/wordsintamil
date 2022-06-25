@@ -35,7 +35,7 @@
     <nav class="navbar navbar-expand-lg navbar-light d-flex justify-content-between  p-4">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="./img/logo.png" alt="" width="90" height="30">
+                <img src="./img/logo.png" alt="" width="100" height="50">
             </a>
             <form class="d-flex">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -61,18 +61,19 @@
                             <p class=" card-text lead text-muted">Sed eget orci eleifend enim mattis suscipit.
                                 Suspendisse potenti non ipsum..</p>
                             <form id="Searchform">
-                                <div class="mb-3">
+                                <div class="">
                                     <div class="typeahead__container">
                                         <div class="typeahead__field">
                                             <div class="typeahead__query">
                                                 <input type="text" class="form-control search-field js-typeahead"
-                                                    placeholder="search something" id="editor" dir="ltr"
-                                                    name="q" autofocus autocomplete="off">
+                                                    placeholder="" id="editor" name="editor" dir="ltr" name="q"
+                                                    autofocus autocomplete="off">
                                                 <button type="submit" style="position: absolute
                                                     !important; right: 25px !important; top: 22px !important;
                                                     background: none !important; border: none !important; font-size:
                                                     30px !important; color: #86939e !important;" id="submit">
                                                     <!-- <i class="fa fa-search" aria-hidden="true" id="searchicon"></i> -->
+                                                    <span class="vertical-line"></span>
                                                     <i class="fa fa-search" aria-hidden="true"
                                                         style="speak: none;font-style: normal;font-weight: normal;font-variant: normal;text-transform: none;line-height: 1;"></i>
                                                 </button>
@@ -123,7 +124,7 @@
     </div>
     <!-- table -->
     <div class="container pb-4 table-responsive" id="mtable" style="display: none;">
-        <button id="close">Close</button>
+        <!-- <button id="close" class="btn btn-light mb-2">Close</button> -->
         <table id="example" class="display nowrap table table-striped table-bordered pt-4" style="width:100%;">
             <thead>
                 <tr>
@@ -306,7 +307,7 @@
 
         document.getElementById("close").addEventListener("click", (e) => {
             document.getElementById("mtable").style.display = "none";
-            document.getElementById("userinput").style.display = "";
+            // document.getElementById("userinput").style.display = "";
         });
     </script>
 
