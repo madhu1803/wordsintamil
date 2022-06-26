@@ -120,6 +120,55 @@ nav .btn-light {
     }
 }
 
+
+@media (min-width: 0px) and  (max-width: 320px) {
+
+    .typeahead__container.cancel:not(.loading) .typeahead__cancel-button,
+    .typeahead__label .typeahead__cancel-button {
+        visibility: visible !important;
+        position: absolute !important;
+        top: 6% !important;
+        font-size: 40px !important;
+        right: 20% !important;
+    }
+}
+
+@media (min-width: 321px) and  (max-width: 375px) {
+
+    .typeahead__container.cancel:not(.loading) .typeahead__cancel-button,
+    .typeahead__label .typeahead__cancel-button {
+        visibility: visible !important;
+        position: absolute !important;
+        top: 6% !important;
+        font-size: 40px !important;
+        right: 17% !important;
+    }
+}
+
+@media (min-width: 376px) and  (max-width: 425px) {
+
+    .typeahead__container.cancel:not(.loading) .typeahead__cancel-button,
+    .typeahead__label .typeahead__cancel-button {
+        visibility: visible !important;
+        position: absolute !important;
+        top: 6% !important;
+        font-size: 40px !important;
+        right: 15% !important;
+    }
+}
+
+@media (min-width: 426px) and  (max-width: 768px) {
+
+    .typeahead__container.cancel:not(.loading) .typeahead__cancel-button,
+    .typeahead__label .typeahead__cancel-button {
+        visibility: visible !important;
+        position: absolute !important;
+        top: 6% !important;
+        font-size: 40px !important;
+        right: 10% !important;
+    }
+}
+
 /* #searchbutton {
     position: absolute !important;
     right: 25px !important;
