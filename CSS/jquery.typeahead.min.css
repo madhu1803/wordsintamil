@@ -428,7 +428,7 @@
 
 }
 
-@media (max-width: 992px) {
+@media (min-width: 600px) and (max-width: 959px) {
 
     .typeahead__container.cancel:not(.loading) .typeahead__cancel-button,
     .typeahead__label .typeahead__cancel-button {
@@ -437,6 +437,18 @@
         top: 10%;
         font-size: 40px;
         right: 12%;
+    }
+}
+
+@media screen and (max-width: 578px) {
+
+    .typeahead__container.cancel:not(.loading) .typeahead__cancel-button,
+    .typeahead__label .typeahead__cancel-button {
+        visibility: visible;
+        position: absolute;
+        top: 8%;
+        font-size: 40px;
+        right: 20%;
     }
 }
 
