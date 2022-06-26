@@ -434,7 +434,7 @@
     .typeahead__label .typeahead__cancel-button {
         visibility: visible;
         position: absolute;
-        top: 10%;
+        top: 9%;
         font-size: 40px;
         right: 12%;
     }
