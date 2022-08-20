@@ -178,3 +178,39 @@ nav .btn-light {
     font-size: 30px !important;
     color: #86939e !important;
 } */
+
+/*  */
+
+.typeahead__container.cancel:not(.loading) .typeahead__cancel-button,
+.typeahead__label .typeahead__cancel-button {
+    visibility: visible;
+    position: absolute;
+    top: 8%;
+    font-size: 50px !important;
+    right: 10%;
+
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+
+    .typeahead__container.cancel:not(.loading) .typeahead__cancel-button,
+    .typeahead__label .typeahead__cancel-button {
+        visibility: visible;
+        position: absolute;
+        top: 9%;
+        font-size: 40px;
+        right: 12%;
+    }
+}
+
+@media screen and (max-width: 578px) {
+
+    .typeahead__container.cancel:not(.loading) .typeahead__cancel-button,
+    .typeahead__label .typeahead__cancel-button {
+        visibility: visible;
+        position: absolute;
+        top: 8%;
+        font-size: 40px;
+        right: 20%;
+    }
+}
