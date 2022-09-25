@@ -211,6 +211,7 @@
 
                     success: function (res) {
                         var table = $j("#example").DataTable();
+                        table.clear().draw();
                         for(var i = 0; i < res.length; i++) {
                             table.row.add([i+1, res[i]]).draw();
                         }
