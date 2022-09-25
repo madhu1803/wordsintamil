@@ -149,9 +149,9 @@
     <script type="text/javascript" charset="utf8"
         src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script type="text/javascript" charset="utf8"
-        src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/pdfmake.min.js"></script>
     <script type="text/javascript" charset="utf8"
-        src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/vfs_fonts.js"></script>
     <script type="text/javascript" charset="utf8"
         src="https://cdn.datatables.net/buttons/2.2.3/js/buttons.html5.min.js"></script>
     <script type="text/javascript" charset="utf8"
@@ -163,7 +163,28 @@
             $j('#example').DataTable({
                 dom: 'Bfrtip',
                 buttons: [
-                    'copy', 'csv', 'excel', 'pdf', 'print'
+                    {
+                        extend: 'pdfHtml5',
+                        customize: function ( doc, button, api ) {
+                            var host = document.URL;
+                            pdfMake.fonts = {
+                                SaiIndira: {
+                                    normal: `${host}/fonts/TSCu_SaiIndira.ttf`,
+                                    bold: `${host}/fonts/TSCu_SaiIndira.ttf`,
+                                    italics: `${host}/fonts/TSCu_SaiIndira.ttf`,
+                                    bolditalics: `${host}/fonts/TSCu_SaiIndira.ttf`
+                                },
+                                Roboto: {
+                                    normal: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Regular.ttf',
+                                    bold: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Medium.ttf',
+                                    italics: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Italic.ttf',
+                                    bolditalics: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-MediumItalic.ttf'
+                                }
+                            }
+                            doc.defaultStyle.font = 'SaiIndira'
+                        }
+                    },
+                    'copy', 'csv', 'excel', 'print'
                 ]
             });
         });
@@ -177,7 +198,6 @@
 
         document.getElementById("Searchform").addEventListener("submit", (e) => {
             e.preventDefault();
-            // alert('hiiiii');
             document.getElementById("mtable").style.display = "block";
             var val = $j("#editor").val();
             document.getElementById("Searchform").reset();
