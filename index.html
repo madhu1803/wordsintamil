@@ -191,33 +191,25 @@
         });
 
         //enter key press logic 
-        $j("#editor").keypress(function (event) {
-            if (event.which == 13) {
-                event.preventDefault();
-                alert('hello')
-                // getresults()
-                // $j("#Searchform").submit();
+        document.getElementById("editor").addEventListener("keydown", function (e) {
+            if (e.code === "Enter") {
+                getresults();
             }
         });
 
         // search table display logic
-
         document.getElementById("Searchform").addEventListener("submit", (e) => {
             e.preventDefault();
-            getresults()
-
-
+            getresults();
         });
 
         document.getElementById("close").addEventListener("click", (e) => {
             document.getElementById("mtable").style.display = "none";
-            // document.getElementById("userinput").style.display = "";
         });
 
 
         function getresults() {
             document.getElementById("mtable").style.display = "block";
-            // document.getElementById("mtable").scrollIntoView();
             var val = $j("#editor").val();
             document.getElementById("Searchform").reset();
             if (val != '' || val != undefined) {
