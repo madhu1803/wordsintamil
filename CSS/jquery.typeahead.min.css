@@ -544,8 +544,3 @@
 .typeahead__label .typeahead__cancel-button:hover {
     background-color: #d5e9f9
 }
-
-
-#example tbody td {
-    padding: 1px 1px !important;
-}

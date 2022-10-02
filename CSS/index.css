@@ -214,3 +214,7 @@ nav .btn-light {
         right: 20%;
     }
 }
+
+#example tbody td {
+    padding: 1px 1px !important;
+}
