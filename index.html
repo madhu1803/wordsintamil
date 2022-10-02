@@ -193,8 +193,9 @@
         //enter key press logic 
         $j("#editor").keypress(function (event) {
             if (event.which == 13) {
-                alert('hello')
                 event.preventDefault();
+                alert('hello')
+                // getresults()
                 // $j("#Searchform").submit();
             }
         });
@@ -203,7 +204,20 @@
 
         document.getElementById("Searchform").addEventListener("submit", (e) => {
             e.preventDefault();
+            getresults()
+
+
+        });
+
+        document.getElementById("close").addEventListener("click", (e) => {
+            document.getElementById("mtable").style.display = "none";
+            // document.getElementById("userinput").style.display = "";
+        });
+
+
+        function getresults() {
             document.getElementById("mtable").style.display = "block";
+            // document.getElementById("mtable").scrollIntoView();
             var val = $j("#editor").val();
             document.getElementById("Searchform").reset();
             if (val != '' || val != undefined) {
@@ -220,15 +234,11 @@
                         for (var i = 0; i < res.length; i++) {
                             table.row.add([i + 1, res[i]]).draw();
                         }
+                        document.getElementById("example").scrollIntoView();
                     }
                 });
             }
-        });
-
-        document.getElementById("close").addEventListener("click", (e) => {
-            document.getElementById("mtable").style.display = "none";
-            // document.getElementById("userinput").style.display = "";
-        });
+        }
     </script>
 
     <!-- Keyman for tamil language -->
